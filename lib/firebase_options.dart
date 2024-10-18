@@ -30,49 +30,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBc-qXyNWhdH6FFOljWcFEJQF5ePrqXYBs',
-    appId: '1:1050142179040:web:3d29f507696fa535e55a85',
-    messagingSenderId: '1050142179040',
-    projectId: 'finance-manager-a7c52',
-    authDomain: 'finance-manager-a7c52.firebaseapp.com',
-    storageBucket: 'finance-manager-a7c52.appspot.com',
-    measurementId: 'G-3L8D0P7FB1',
+    apiKey: 'AIzaSyCaPt529K_C8NnVsiEdzdvgLIJOqsebHvU',
+    appId: '1:700220519382:web:a2a285bfd8942599086a77',
+    messagingSenderId: '700220519382',
+    projectId: 'expense-38286',
+    authDomain: 'expense-38286.firebaseapp.com',
+    storageBucket: 'expense-38286.appspot.com',
+    measurementId: 'G-SVL6FGP42E',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCa-qt3IHazTFTbVXOGv6pcgjW1jBjIdXI',
-    appId: '1:1050142179040:android:fbc2fe9aa1ec54ebe55a85',
-    messagingSenderId: '1050142179040',
-    projectId: 'finance-manager-a7c52',
-    storageBucket: 'finance-manager-a7c52.appspot.com',
+    apiKey: 'AIzaSyDOJ7dzggJ1689oxexIg6yrk0gIvn3RZQY',
+    appId: '1:700220519382:android:ee98ef89fe7c02e2086a77',
+    messagingSenderId: '700220519382',
+    projectId: 'expense-38286',
+    storageBucket: 'expense-38286.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDJEI0RrfTNh6o27bGDc1_YuHbAQIrPXQY',
-    appId: '1:1050142179040:ios:401cca585b3ca587e55a85',
-    messagingSenderId: '1050142179040',
-    projectId: 'finance-manager-a7c52',
-    storageBucket: 'finance-manager-a7c52.appspot.com',
+    apiKey: 'AIzaSyAbAa_Xl-1EALOYulSksQUHnaGEkXpJX90',
+    appId: '1:700220519382:ios:c2e70581f86ea410086a77',
+    messagingSenderId: '700220519382',
+    projectId: 'expense-38286',
+    storageBucket: 'expense-38286.appspot.com',
     iosBundleId: 'com.example.expensesTracker',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDJEI0RrfTNh6o27bGDc1_YuHbAQIrPXQY',
-    appId: '1:1050142179040:ios:401cca585b3ca587e55a85',
-    messagingSenderId: '1050142179040',
-    projectId: 'finance-manager-a7c52',
-    storageBucket: 'finance-manager-a7c52.appspot.com',
+    apiKey: 'AIzaSyAbAa_Xl-1EALOYulSksQUHnaGEkXpJX90',
+    appId: '1:700220519382:ios:c2e70581f86ea410086a77',
+    messagingSenderId: '700220519382',
+    projectId: 'expense-38286',
+    storageBucket: 'expense-38286.appspot.com',
     iosBundleId: 'com.example.expensesTracker',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBc-qXyNWhdH6FFOljWcFEJQF5ePrqXYBs',
-    appId: '1:1050142179040:web:a69287250be91daae55a85',
-    messagingSenderId: '1050142179040',
-    projectId: 'finance-manager-a7c52',
-    authDomain: 'finance-manager-a7c52.firebaseapp.com',
-    storageBucket: 'finance-manager-a7c52.appspot.com',
-    measurementId: 'G-HGMEHLVYJ1',
+    apiKey: 'AIzaSyCaPt529K_C8NnVsiEdzdvgLIJOqsebHvU',
+    appId: '1:700220519382:web:b9b10598ef77fc0e086a77',
+    messagingSenderId: '700220519382',
+    projectId: 'expense-38286',
+    authDomain: 'expense-38286.firebaseapp.com',
+    storageBucket: 'expense-38286.appspot.com',
+    measurementId: 'G-CTTRPR918Q',
   );
 
 }
