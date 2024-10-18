@@ -1,12 +1,10 @@
-
 import 'dart:math';
-
-import 'package:expense_repository/expense_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../data/data.dart';
+import 'package:expense_repository/expense_repository.dart'; // Ensure you have this package and the correct path
+import '../../add_expense/views/ExpenseSplitter.dart'; // Adjust the import if necessary
 
 class MainScreen extends StatelessWidget {
   final List<Expense> expenses;
@@ -19,6 +17,7 @@ class MainScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
         child: Column(
           children: [
+            // Top section with welcome message and settings icon
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -32,7 +31,7 @@ class MainScreen extends StatelessWidget {
                           height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.yellow[700]
+                            color: Colors.yellow[700],
                           ),
                         ),
                         Icon(
@@ -41,7 +40,7 @@ class MainScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(width: 8,),
+                    const SizedBox(width: 8),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -50,7 +49,7 @@ class MainScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: Theme.of(context).colorScheme.outline
+                            color: Theme.of(context).colorScheme.outline,
                           ),
                         ),
                         Text(
@@ -58,17 +57,27 @@ class MainScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Theme.of(context).colorScheme.onSurface
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         )
                       ],
                     ),
                   ],
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.settings))
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ExpenseSplitterHome()),
+                    );
+                  },
+                  icon: const Icon(CupertinoIcons.group),
+                ),
               ],
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 20),
+
+            // Balance card
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width / 2,
@@ -86,9 +95,9 @@ class MainScreen extends StatelessWidget {
                   BoxShadow(
                     blurRadius: 4,
                     color: Colors.grey.shade300,
-                    offset: const Offset(5, 5)
+                    offset: const Offset(5, 5),
                   )
-                ]
+                ],
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +107,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
-                      fontWeight: FontWeight.w600
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -107,7 +116,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 40,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Padding(
@@ -122,14 +131,14 @@ class MainScreen extends StatelessWidget {
                               height: 25,
                               decoration: const BoxDecoration(
                                 color: Colors.white30,
-                                shape: BoxShape.circle
+                                shape: BoxShape.circle,
                               ),
                               child: const Center(
                                 child: Icon(
                                   CupertinoIcons.arrow_down,
                                   size: 12,
                                   color: Colors.greenAccent,
-                                )
+                                ),
                               ),
                             ),
                             const SizedBox(width: 8),
@@ -141,7 +150,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w400
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                                 Text(
@@ -149,7 +158,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w600
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
@@ -163,14 +172,14 @@ class MainScreen extends StatelessWidget {
                               height: 25,
                               decoration: const BoxDecoration(
                                 color: Colors.white30,
-                                shape: BoxShape.circle
+                                shape: BoxShape.circle,
                               ),
                               child: const Center(
                                 child: Icon(
                                   CupertinoIcons.arrow_down,
                                   size: 12,
                                   color: Colors.red,
-                                )
+                                ),
                               ),
                             ),
                             const SizedBox(width: 8),
@@ -182,7 +191,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w400
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                                 Text(
@@ -190,7 +199,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w600
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
@@ -204,6 +213,8 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
+
+            // Transactions header
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -212,25 +223,27 @@ class MainScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     color: Theme.of(context).colorScheme.onSurface,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    
+                    // Action for "View All"
                   },
                   child: Text(
                     'View All',
                     style: TextStyle(
                       fontSize: 14,
                       color: Theme.of(context).colorScheme.outline,
-                      fontWeight: FontWeight.w400
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 )
               ],
             ),
             const SizedBox(height: 20),
+
+            // Transactions list
             Expanded(
               child: ListView.builder(
                 itemCount: expenses.length,
@@ -240,7 +253,7 @@ class MainScreen extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(12)
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
@@ -257,7 +270,7 @@ class MainScreen extends StatelessWidget {
                                       height: 50,
                                       decoration: BoxDecoration(
                                         color: Color(expenses[i].category.color),
-                                        shape: BoxShape.circle
+                                        shape: BoxShape.circle,
                                       ),
                                     ),
                                     Image.asset(
@@ -273,7 +286,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme.of(context).colorScheme.onSurface,
-                                    fontWeight: FontWeight.w500
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ],
@@ -286,7 +299,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme.of(context).colorScheme.onSurface,
-                                    fontWeight: FontWeight.w400
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                                 Text(
@@ -294,7 +307,7 @@ class MainScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme.of(context).colorScheme.outline,
-                                    fontWeight: FontWeight.w400
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                               ],
@@ -304,7 +317,7 @@ class MainScreen extends StatelessWidget {
                       ),
                     ),
                   );
-                }
+                },
               ),
             )
           ],
